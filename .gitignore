@@ -1,0 +1,21 @@
+.DS_Store
+*.log
+
+# Flutter
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.packages
+app/build/
+app/.pub-cache/
+app/.pub/
+app/**/doc/api/
+app/android/.gradle/
+app/ios/Pods/
+app/**/*.iml
+
+# Workers
+backend/node_modules/
+backend/.wrangler/
+backend/dist/
+backend/worker-configuration.d.ts

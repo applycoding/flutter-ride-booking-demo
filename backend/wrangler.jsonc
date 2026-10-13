@@ -1,0 +1,36 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "quay-rides-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-13",
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true
+    }
+  },
+  // Placeholder id so `wrangler dev` and tests can use a local D1 database.
+  // This demo is not deployed, and this id is not a remote database.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "quay-rides",
+      "database_id": "00000000-0000-4000-8000-000000000001",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RIDE_TRACKER",
+        "class_name": "RideTracker"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["RideTracker"]
+    }
+  ]
+}
